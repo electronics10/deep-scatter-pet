@@ -67,3 +67,7 @@ The final story depends on the results.
 5. How many simulated runs are needed (the prototype trained on 50), and whether to balance the dataset
    by an estimate of each object's scatter fraction, as the old generator could.
 6. What exactly to compare on the synthesized real data.
+
+## Previous works (may serve as a prototype)
+
+- [pet-scatter-correction](https://github.com/electronics10/pet-scatter-correction)
