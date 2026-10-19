@@ -42,7 +42,7 @@ The final story depends on the results.
   - training, validation and test sets are split by simulation run, never by plane.
 - **Ablations come after the main results.** If results are far from what we expect, the design is
   revised, drastically if needed.
-- **Data:** simulated with MCGPU-PET through the shared toolkit (`pet-sim-recon`), which separates
+- **Data:** simulated with MCGPU-PET through the shared toolkit ([pet-sim-recon](https://github.com/electronics10/pet-sim-recon)), which separates
   trues and scatter. Random shapes (ellipsoids and elliptic cylinders): some runs with inserts inside a
   larger body that also has activity, some with free-floating shapes. Lower count levels come from
   thinning (keeping each count with probability p).
