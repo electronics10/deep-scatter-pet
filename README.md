@@ -49,10 +49,12 @@ The final story depends on the results.
 - **Judging:** reconstruct each test case three ways, with identical settings and the same noise
   realization: no correction (worst), the true simulated scatter (best possible), and the method.
   Report how much of the worst-to-best gap the method closes, measured in the reconstructed image.
-- **Real data:** the Bruker scanner gives only its own reconstructed images, and its only scatter
-  correction is a dual-energy-window switch. On 2026-10-20 we scan a larger phantom with and without
-  that correction. Raw-like data will be synthesized by forward-projecting the 3D images. This is
-  weaker than real raw data, and the scanner's correction is a reference, not the truth.
+- **Real data:** first phantom session on 2026-11-02 (record in `experiments/2026-11-02-phantom-pilot/`;
+  method guide in `docs/phantom-experiments.md`).
+  The three-cold-rod and concentric-circle phantoms were reconstructed by the scanner with and without
+  its SSS scatter correction (it also offers dual-energy-window correction). The scanner's correction is
+  a reference, not the truth. The operator agreed to provide list-mode data; until we can use it,
+  raw-like data are synthesized by forward-projecting the 3D images, which is weaker than real raw data.
 
 ## Open questions
 
