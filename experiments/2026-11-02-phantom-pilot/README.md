@@ -3,12 +3,14 @@
 Record of the first phantom scan session on the lab's Bruker 7 T PET/MRI. Facts and readings only;
 background and methods are in [docs/phantom-experiments.md](../../docs/phantom-experiments.md).
 Identical copies are kept in `mr-pet-synergy`, in `deep-scatter-pet`, and with the data; update all of
-them together.
+them together. To tell which copy is newest, compare the "Last updated" line and the change log at the
+end.
 
 - **Recorded by:** Wei-Cheng Chen, with a radiologist colleague. The scanner operator ran the scanner and
   the post-processing.
-- **Status:** draft, 2026-11-03. Transcribed from the handwritten sheet and drawings. Items marked
-  **TBD** are still open.
+- **Status:** draft. Transcribed from the handwritten sheet and drawings. Items marked **TBD** are still
+  open.
+- **Last updated:** 2026-11-03 23:08 (UTC+8).
 
 ## Purpose
 
@@ -20,8 +22,13 @@ them together.
 - **Scanner:** Bruker BioSpec 70/18 7 T MRI with PET insert (sequential PET and MR); console software
   ParaVision 360 V3.1.
 - **Workflow per group** (console screenshot): PET acquisition → bed move → MR, sequence
-  **T2_TurboRARE** (T2-weighted fast spin echo). The screenshot lists experiment numbers PET E1,
-  T2_TurboRARE E5, PET E6, T2_TurboRARE E7; which phantom and level each belongs to: **TBD**.
+  **T2_TurboRARE** (T2-weighted fast spin echo).
+- **Experiment numbers:** ParaVision stores every acquisition in a folder named by a number (E1 →
+  folder `1`, E5 → folder `5`, and so on), not by phantom name. So these numbers are how to find the files
+  of a given scan on the console or in an export. The one screenshot shows PET E1, T2_TurboRARE E5,
+  PET E6, T2_TurboRARE E7; the numbers of the other scans were not noted. Not essential: the scan of each
+  file can also be identified from the acquisition times in its DICOM header, compared with the times
+  in this record.
 - **Tracer:** F-18 FDG, 26.25 mCi in the delivery at 09:00.
 - **Units:** activity readings in μCi; times are local time (UTC+8).
 - **Scan start times** were not recorded. Each scan started about 1 minute after the time written for it;
@@ -136,3 +143,10 @@ water cold chamber; concentric-circle: middle layer only).
   - [ ] fallback, only if we cannot read the list-mode ourselves: the full scans re-framed into short
         frames (e.g. 1, 2, 5, 10, 25%, 5 frames each), reconstructed with the same settings.
 - [ ] Replace the estimated count levels with list-mode count totals.
+
+## Change log
+
+Times in UTC+8.
+
+- 2026-11-03 22:57: first version.
+- 2026-11-03 23:08: explained experiment numbers; added "Last updated" line and this change log.

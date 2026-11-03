@@ -2,9 +2,10 @@
 
 How to plan, run, record and analyse phantom scans on the lab's scanner, with the background needed to
 understand the choices. Session records (in `experiments/`) refer to this guide instead of repeating it.
-Identical copies are kept in `mr-pet-synergy` and `deep-scatter-pet`; update both together.
+Identical copies are kept in `mr-pet-synergy` and `deep-scatter-pet`; update both together. To tell which
+copy is newest, compare the "Last updated" line and the change log at the end.
 
-Status: draft, 2026-11-03.
+Status: draft. Last updated: 2026-11-03 23:08 (UTC+8).
 
 ## 1. Counts and noise
 
@@ -63,8 +64,19 @@ Status: draft, 2026-11-03.
 
 ## 4. Scatter correction on this scanner
 
-- The scanner software offers **single scatter simulation (SSS)** and **dual-energy-window** correction,
-  applied in post-processing.
+- The scanner software offers **single scatter simulation (SSS)** and **dual-energy-window (DEW)**
+  correction, applied in post-processing.
+- **SSS** computes single scatter from physics, using an activity estimate and the μ-map, then scales it
+  to the measured data.
+- **DEW** sorts counts by their measured energy. Scattered photons lose energy (Compton scattering), so
+  besides the main (photopeak) window, a lower window (e.g. about 200–350 keV) is set where almost all
+  counts are scatter. The scatter in the main window is estimated as the lower-window counts times a
+  factor k, usually smoothed. This is done in software; the hardware only measures each photon's energy
+  and decides which energies are recorded at all. Offering DEW in post-processing suggests the list-mode
+  data keep each event's energy (to confirm).
+- **DEW limits:** small-angle scatter keeps almost 511 keV and stays in the main window; limited energy
+  resolution mixes the two windows; scatter in the lower window is distributed differently from scatter
+  in the main window. SSS is generally considered more accurate.
 - Measured scatter fractions (NEMA scatter phantoms, Doss et al. 2022): **6.9% mouse-sized, 14.2%
   rat-sized**. Scatter matters more in larger objects.
 
@@ -127,6 +139,9 @@ air chamber is dark in both.
 - Note the clock difference between the dose calibrator and the scanner.
 - For each phantom: syringe readings before and after with times; weight; **scan start time** of every
   acquisition; frame lengths; MR sequences and durations; a photo of the position.
+- The **experiment number** of every acquisition (shown on the console, e.g. PET E1, T2_TurboRARE E5).
+  ParaVision names its data folders by these numbers, not by phantom, so they are the easiest way to
+  find each scan's files later.
 - Scan MR for every phantom if the attenuation map depends on it.
 
 **After: what to ask the operator for** (post-processing only)
@@ -158,3 +173,11 @@ air chamber is dark in both.
   https://pmc.ncbi.nlm.nih.gov/articles/PMC12901769/
 - Bruker, ParaVision 360 PET/MR.
   https://www.bruker.com/en/products-and-solutions/preclinical-imaging/paravision-360/paravision-360-pet-mr.html
+
+## Change log
+
+Times in UTC+8.
+
+- 2026-11-03 22:57: first version.
+- 2026-11-03 23:08: explained dual-energy-window correction; experiment numbers in the session
+  checklist; added "Last updated" line and this change log.
