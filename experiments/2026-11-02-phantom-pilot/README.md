@@ -8,9 +8,10 @@ end.
 
 - **Recorded by:** Wei-Cheng Chen, with a radiologist colleague. The scanner operator ran the scanner and
   the post-processing.
-- **Status:** draft. Transcribed from the handwritten sheet and drawings. Items marked **TBD** are still
+- **Status:** draft. Transcribed from the handwritten sheet (`handwritten-record.pdf`, in this folder)
+  and drawings. Items marked **TBD** are still
   open.
-- **Last updated:** 2026-11-03 23:08 (UTC+8).
+- **Last updated:** 2026-11-03 23:22 (UTC+8).
 
 ## Purpose
 
@@ -150,3 +151,4 @@ Times in UTC+8.
 
 - 2026-11-03 22:57: first version.
 - 2026-11-03 23:08: explained experiment numbers; added "Last updated" line and this change log.
+- 2026-11-03 23:22: added the scanned handwritten sheet as `handwritten-record.pdf`.
